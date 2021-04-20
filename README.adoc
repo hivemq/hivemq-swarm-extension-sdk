@@ -1,0 +1,32 @@
+:hivemq-github: https://github.com/hivemq
+:hivemq-website: http://www.hivemq.com
+:hivemq-community-forum: https://community.hivemq.com/
+:hivemq-extensions-docu: http://www.hivemq.com/docs/latest/extensions/
+:hivemq-marketplace: http://www.hivemq.com/extensions/
+
+== Using the SDK
+
+The HiveMQ Swarm Extension SDK is available in Maven central, so no special configuration is needed.
+To use the SDK, add the following dependency to your Maven project:
+
+[source,xml]
+----
+<dependency>
+    <groupId>com.hivemq</groupId>
+    <artifactId>hivemq-swarm-extension-sdk</artifactId>
+    <version>4.6.0</version>
+</dependency>
+----
+
+== Need help ?
+
+If you need help with custom HiveMQ extensions please contact support@hivemq.com.
+
+== Contributing
+
+If you want to contribute to the HiveMQ Swarm Extension SDK, see the link:CONTRIBUTING.md[contribution guidelines].
+
+== License
+
+The HiveMQ Extension SDK is licensed under the `APACHE LICENSE, VERSION 2.0`.
+A copy of the license can be found link:LICENSE[here].
