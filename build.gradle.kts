@@ -1,17 +1,68 @@
 plugins {
     id("java-library")
     id("maven-publish")
+    id("signing")
+    id("io.github.gradle-nexus.publish-plugin")
+    id("com.github.hierynomus.license")
+    id("com.github.sgtsilvio.gradle.utf8")
+    id("com.github.sgtsilvio.gradle.metadata")
+    id("com.github.sgtsilvio.gradle.javadoc-links")
 }
+
+/* ******************** metadata ******************** */
 
 group="com.hivemq"
+description = "SDK for developing HiveMQ Swarm extensions."
 
-java {
-    sourceCompatibility = JavaVersion.VERSION_11
-    targetCompatibility = JavaVersion.VERSION_11
+metadata {
+    readableName.set("HiveMQ Swarm Extension SDK")
+    organization {
+        name.set("HiveMQ GmbH")
+        url.set("https://www.hivemq.com/")
+    }
+    license {
+        apache2()
+    }
+    developers {
+        developer {
+            id.set("yweber")
+            name.set("Yannick Weber")
+            email.set("yannick.weber@hivemq.com")
+        }
+        developer {
+            id.set("flimpoeck")
+            name.set("Florian Limpoeck")
+            email.set("florian.limpoeck@hivemq.com")
+        }
+        developer {
+            id.set("lbrandl")
+            name.set("Lukas Brandl")
+            email.set("lukas.brandl@hivemq.com")
+        }
+        developer {
+            id.set("SgtSilvio")
+            name.set("Silvio Giebl")
+            email.set("silvio.giebl@hivemq.com")
+        }
+        developer {
+            id.set("dkrueger")
+            name.set("Daniel Krüger")
+            email.set("daniel.krueger@hivemq.com")
+        }
+        developer {
+            id.set("tseeberger")
+            name.set("Till Seeberger")
+            email.set("till.seeberger@hivemq.com")
+        }
+    }
+    github {
+        org.set("hivemq")
+        repo.set("hivemq-extension-sdk")
+        issues()
+    }
 }
 
-description = "API for developing HiveMQ Swarm extensions."
-
+/* ******************** dependencies ******************** */
 
 repositories {
     mavenCentral()
@@ -23,62 +74,79 @@ dependencies {
     implementation("io.dropwizard.metrics:metrics-core:${property("metrics-core.version")}")
 
     api("org.slf4j:slf4j-api:${property("slf4j-api.version")}")
-
-    testImplementation("junit:junit:${property("junit.version")}")
-
 }
 
-fun getSnapshotVersion(): String {
+/* ******************** java ******************** */
 
-//    val stdout = org.apache.commons.io.output.ByteArrayOutputStream()
-//
-//    exec {
-//        commandLine("git", "log", "--pretty=format:%h", "-n", "1")
-//        standardOutput = stdout
-//    }
+java {
+    toolchain {
+        languageVersion.set(JavaLanguageVersion.of(11))
+    }
 
-//    val gitHash = stdout.toString().trim()
-
-    //FIXME: FIXME
-    return property("baseVersion").toString() + "-SNAPSHOT-" //+ gitHash
+    withJavadocJar()
+    withSourcesJar()
 }
+
+tasks.withType<Jar> {
+    manifest.attributes(
+            "Implementation-Title" to project.name,
+            "Implementation-Vendor" to metadata.organization!!.name.get(),
+            "Implementation-Version" to project.version
+    )
+}
+
+tasks.javadoc {
+    title = "${metadata.readableName.get()} ${project.version} API"
+
+    doLast {
+        javaexec {
+            main = "-jar"
+            args("$projectDir/gradle/tools/javadoc-cleaner-1.0.jar")
+        }
+    }
+
+    doLast { // javadoc search fix for jdk 11 https://bugs.openjdk.java.net/browse/JDK-8215291
+        copy {
+            from(destinationDir!!.resolve("search.js"))
+            into(temporaryDir)
+            filter { line -> line.replace("if (ui.item.p == item.l) {", "if (item.m && ui.item.p == item.l) {") }
+        }
+        delete(destinationDir!!.resolve("search.js"))
+        copy {
+            from(temporaryDir.resolve("search.js"))
+            into(destinationDir!!)
+        }
+    }
+}
+
+/* ******************** publishing ******************** */
 
 publishing {
-    repositories {
-        maven {
-            name = "GitHubPackages"
-            url = uri("https://maven.pkg.github.com/hivemq/hivemq-swarm-extension-sdk")
-            credentials {
-                username = (System.getenv("PUBLISH_GITHUB_USERNAME") ?: "").toString()
-                password = (System.getenv("PUBLISH_GITHUB_TOKEN") ?: "").toString()
-            }
-        }
-    }
-    publications.register<MavenPublication>("release") {
-        groupId = "com.hivemq"
-        artifactId = "hivemq-swarm-extension-sdk"
-        version = project.version.toString()
-
-        from(components["java"])
-        pom {
-            name.set(property("readableName").toString())
-            description.set(project.description)
-            url.set("https://github.com/hivemq/hivemq-swarm-extension-sdk")
-        }
-    }
-    publications.register<MavenPublication>("snapshot") {
-        groupId = "com.hivemq"
-        artifactId = "hivemq-swarm-extension-sdk"
-        version = getSnapshotVersion()
-
-        from(components["java"])
-        pom {
-            name.set(property("readableName").toString())
-            description.set(project.description)
-            url.set("https://github.com/hivemq/hivemq-swarm-extension-sdk")
+    publications {
+        register<MavenPublication>("maven") {
+            from(components["java"])
         }
     }
 }
 
+signing {
+    val signKey: String? by project
+    val signKeyPass: String? by project
+    useInMemoryPgpKeys(signKey, signKeyPass)
+    sign(publishing.publications["maven"])
+}
 
+nexusPublishing {
+    repositories {
+        sonatype()
+    }
+}
+
+
+/* ******************** checks ******************** */
+
+license {
+    header = projectDir.resolve("HEADER")
+    mapping("java", "SLASHSTAR_STYLE")
+}
 
