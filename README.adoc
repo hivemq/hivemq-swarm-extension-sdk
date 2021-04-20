@@ -20,7 +20,7 @@ To use the SDK, add the following dependency to your Maven project:
 
 == Need help ?
 
-If you need help with custom HiveMQ extensions please contact support@hivemq.com.
+If you need help with custom HiveMQ Swarm extensions please contact support@hivemq.com.
 
 == Contributing
 
