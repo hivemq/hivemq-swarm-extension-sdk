@@ -3,6 +3,8 @@ plugins {
     id("maven-publish")
 }
 
+group="com.hivemq"
+
 java {
     sourceCompatibility = JavaVersion.VERSION_11
     targetCompatibility = JavaVersion.VERSION_11
