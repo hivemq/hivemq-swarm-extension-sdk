@@ -26,16 +26,16 @@ import java.util.Map;
 public interface ExtensionTaskInput extends ExtensionInput {
 
     /**
-     * Returns the clientID associated with the input.
+     * Returns the client ID associated with the input.
      *
-     * @return Client ID
+     * @return the client ID.
      */
     @NotNull String getClientId();
 
     /**
-     * Returns the additional arguments of the connect in the scenario.xml.
+     * Returns the additional arguments of the tag in the scenario.xml.
      *
-     * @return the additional arguments
+     * @return the additional arguments.
      */
     @NotNull Map<String, String> getAdditionalAttributes();
 }
