@@ -4,19 +4,19 @@
 :hivemq-extensions-docu: http://www.hivemq.com/docs/latest/extensions/
 :hivemq-marketplace: http://www.hivemq.com/extensions/
 
-== Using the SDK
-
-The HiveMQ Swarm Extension SDK is available in Maven central, so no special configuration is needed.
-To use the SDK, add the following dependency to your Maven project:
-
-[source,xml]
-----
-<dependency>
-    <groupId>com.hivemq</groupId>
-    <artifactId>hivemq-swarm-extension-sdk</artifactId>
-    <version>4.6.0</version>
-</dependency>
-----
+//== Using the SDK
+//
+//The HiveMQ Swarm Extension SDK is available in Maven central, so no special configuration is needed.
+//To use the SDK, add the following dependency to your Maven project:
+//
+//[source,xml]
+//----
+//<dependency>
+//    <groupId>com.hivemq</groupId>
+//    <artifactId>hivemq-swarm-extension-sdk</artifactId>
+//    <version>4.6.0</version>
+//</dependency>
+//----
 
 == Need help ?
 
