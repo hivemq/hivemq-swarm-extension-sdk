@@ -11,7 +11,7 @@ plugins {
 
 /* ******************** metadata ******************** */
 
-group="com.hivemq"
+group = "com.hivemq"
 description = "SDK for developing HiveMQ Swarm extensions."
 
 metadata {
@@ -57,7 +57,7 @@ metadata {
     }
     github {
         org.set("hivemq")
-        repo.set("hivemq-extension-sdk")
+        repo.set("hivemq-swarm-extension-sdk")
         issues()
     }
 }
@@ -87,9 +87,9 @@ java {
 
 tasks.withType<Jar> {
     manifest.attributes(
-            "Implementation-Title" to project.name,
-            "Implementation-Vendor" to metadata.organization!!.name.get(),
-            "Implementation-Version" to project.version
+        "Implementation-Title" to project.name,
+        "Implementation-Vendor" to metadata.organization!!.name.get(),
+        "Implementation-Version" to project.version
     )
 }
 
@@ -147,4 +147,3 @@ license {
     header = projectDir.resolve("HEADER")
     mapping("java", "SLASHSTAR_STYLE")
 }
-
