@@ -32,7 +32,7 @@ public interface ExtensionRegistry {
      * @param key              the key
      * @param securityProvider the {@link SecurityProvider}
      */
-    void addSecurityProvider(final @NotNull String key, final @NotNull SecurityProvider securityProvider);
+    void addSecurityProvider(@NotNull String key, @NotNull SecurityProvider securityProvider);
 
     /**
      * Register a {@link PayloadGenerator} with the specific key. It can be accessed in the scenario.xml with that key.
@@ -40,7 +40,7 @@ public interface ExtensionRegistry {
      * @param key                    the key
      * @param payloadGenerator the {@link PayloadGenerator}
      */
-    void addPayloadGenerator(final @NotNull String key, final @NotNull PayloadGenerator payloadGenerator);
+    void addPayloadGenerator(@NotNull String key, @NotNull PayloadGenerator payloadGenerator);
 
     /**
      * Retrieve the {@link SecurityProvider} that is registered to that key. Returns null if no {@link SecurityProvider}
@@ -49,7 +49,7 @@ public interface ExtensionRegistry {
      * @param key the Key
      * @return the {@link SecurityProvider} or null.
      */
-    @Nullable SecurityProvider getSecurityProvider(final @NotNull String key);
+    @Nullable SecurityProvider getSecurityProvider(@NotNull String key);
 
     /**
      * Retrieve the {@link PayloadGenerator} that is registered to that key. Returns null if no {@link PayloadGenerator}
@@ -58,6 +58,5 @@ public interface ExtensionRegistry {
      * @param key the Key
      * @return the {@link PayloadGenerator} or null.
      */
-    @Nullable PayloadGenerator getPayloadGenerator(final @NotNull String key);
-
+    @Nullable PayloadGenerator getPayloadGenerator(@NotNull String key);
 }

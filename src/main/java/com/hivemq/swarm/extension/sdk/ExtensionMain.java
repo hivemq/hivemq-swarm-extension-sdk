@@ -26,8 +26,7 @@ public interface ExtensionMain {
     /**
      * This gets called when the extension is instantiated on an HiveMQ Swarm agent.
      *
-     * @param extensionContext the {@link ExtensionContext}
+     * @param extensionContext the {@link ExtensionContext}.
      */
-    void extensionMain(final @NotNull ExtensionContext extensionContext);
-
+    void extensionMain(@NotNull ExtensionContext extensionContext);
 }

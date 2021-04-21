@@ -52,5 +52,4 @@ public interface PayloadGeneratorInput extends ExtensionTaskInput {
      * @return Client offset
      */
     int getClientOffset();
-
 }
