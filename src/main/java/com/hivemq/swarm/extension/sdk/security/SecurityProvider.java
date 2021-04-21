@@ -29,5 +29,5 @@ public interface SecurityProvider {
      * @param input  the {@link SecurityProviderInput}.
      * @param output the {@link SecurityProviderOutput}.
      */
-    void provideSecurity(@NotNull SecurityProviderInput input, @NotNull SecurityProviderOutput output);
+    void onConnect(@NotNull SecurityProviderInput input, @NotNull SecurityProviderOutput output);
 }
