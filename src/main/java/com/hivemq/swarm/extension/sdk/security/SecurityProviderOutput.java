@@ -60,7 +60,7 @@ public interface SecurityProviderOutput {
     @NotNull SecurityProviderOutput protocols(@Nullable Collection<String> protocols);
 
     /**
-     * Sets the SSL/TLS handshake timeout}.
+     * Sets the SSL/TLS handshake timeout.
      * <p>
      * The timeout in nanoseconds must be in the range: [0, {@link Integer#MAX_VALUE}].
      *
