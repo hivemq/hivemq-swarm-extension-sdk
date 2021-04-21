@@ -27,17 +27,16 @@ import org.jetbrains.annotations.NotNull;
 public interface ExtensionContext extends ExtensionInput {
 
     /**
-     * Use the {@link ExtensionRegistry} to register custom {@link PayloadGenerator} and
-     * {@link SecurityProvider}
+     * Use the {@link ExtensionRegistry} to register custom {@link PayloadGenerator} and {@link SecurityProvider}.
      *
-     * @return the {@link ExtensionRegistry}
+     * @return the {@link ExtensionRegistry}.
      */
     @NotNull ExtensionRegistry getExtensionRegistry();
 
     /**
      * Use the {@link MetricRegistry} to register extension-related metrics.
      *
-     * @return the {@link MetricRegistry} of this hivemq-swarm instance.
+     * @return the {@link MetricRegistry}.
      */
     @NotNull MetricRegistry getMetricRegistry();
 }

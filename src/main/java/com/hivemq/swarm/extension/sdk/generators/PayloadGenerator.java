@@ -34,6 +34,5 @@ public interface PayloadGenerator {
      *
      * @return payload as {@link ByteBuffer}
      */
-    @NotNull
-    ByteBuffer nextPayload(@NotNull PayloadGeneratorInput payloadGeneratorInput);
+    @NotNull ByteBuffer nextPayload(@NotNull PayloadGeneratorInput payloadGeneratorInput);
 }
