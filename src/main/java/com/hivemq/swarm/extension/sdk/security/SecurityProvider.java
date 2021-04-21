@@ -25,11 +25,9 @@ public interface SecurityProvider {
 
     /**
      * This gets called for every connect with this security provider.
-     * Use {@link Security.Builder} to create the returned object.
      *
-     * @param input the {@link SecurityProviderInput}
-     * @return the {@link Security}
+     * @param input  the {@link SecurityProviderInput}.
+     * @param output the {@link SecurityProviderOutput}.
      */
-    @NotNull Security provideSecurity(@NotNull SecurityProviderInput input);
-
+    void provideSecurity(@NotNull SecurityProviderInput input, @NotNull SecurityProviderOutput output);
 }
