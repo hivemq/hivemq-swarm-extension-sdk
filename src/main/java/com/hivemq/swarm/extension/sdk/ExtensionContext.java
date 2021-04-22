@@ -23,6 +23,7 @@ import org.jetbrains.annotations.NotNull;
 
 /**
  * @author Yannick Weber
+ * @since 4.6.0
  */
 public interface ExtensionContext extends ExtensionInput {
 
@@ -30,6 +31,7 @@ public interface ExtensionContext extends ExtensionInput {
      * Use the {@link ExtensionRegistry} to register custom {@link PayloadGenerator} and {@link SecurityProvider}.
      *
      * @return the {@link ExtensionRegistry}.
+     * @since 4.6.0
      */
     @NotNull ExtensionRegistry getExtensionRegistry();
 
@@ -37,6 +39,7 @@ public interface ExtensionContext extends ExtensionInput {
      * Use the {@link MetricRegistry} to register new or reuse extension-related metrics.
      *
      * @return the {@link MetricRegistry}.
+     * @since 4.6.0
      */
     @NotNull MetricRegistry getMetricRegistry();
 }

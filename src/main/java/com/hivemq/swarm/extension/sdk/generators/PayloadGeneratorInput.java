@@ -21,6 +21,7 @@ import org.jetbrains.annotations.NotNull;
 
 /**
  * @author Yannick Weber
+ * @since 4.6.0
  */
 public interface PayloadGeneratorInput extends ExtensionTaskInput {
 
@@ -28,6 +29,7 @@ public interface PayloadGeneratorInput extends ExtensionTaskInput {
      * The topic of the publish which the payload is generated for.
      *
      * @return the Topic.
+     * @since 4.6.0
      */
     @NotNull String getTopic();
 
@@ -36,6 +38,7 @@ public interface PayloadGeneratorInput extends ExtensionTaskInput {
      * nanoseconds.
      *
      * @return the rate.
+     * @since 4.6.0
      */
     long getRate();
 
@@ -43,6 +46,7 @@ public interface PayloadGeneratorInput extends ExtensionTaskInput {
      * The count of publish messages of the publish command.
      *
      * @return the count.
+     * @since 4.6.0
      */
     long getCount();
 
@@ -50,6 +54,7 @@ public interface PayloadGeneratorInput extends ExtensionTaskInput {
      * The offset of the client within Range: [0..inf] of the client group this generator is associated with.
      *
      * @return Client offset
+     * @since 4.6.0
      */
     int getClientOffset();
 }

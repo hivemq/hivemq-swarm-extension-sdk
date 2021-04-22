@@ -20,6 +20,7 @@ import org.jetbrains.annotations.NotNull;
 
 /**
  * @author Yannick Weber
+ * @since 4.6.0
  */
 public interface SecurityProvider {
 
@@ -28,6 +29,7 @@ public interface SecurityProvider {
      *
      * @param input  the {@link SecurityProviderInput}.
      * @param output the {@link SecurityProviderOutput}.
+     * @since 4.6.0
      */
     void onConnect(@NotNull SecurityProviderInput input, @NotNull SecurityProviderOutput output);
 }

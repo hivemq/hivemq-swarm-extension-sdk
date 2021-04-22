@@ -20,6 +20,7 @@ import com.hivemq.swarm.extension.sdk.ExtensionTaskInput;
 
 /**
  * @author Yannick Weber
+ * @since 4.6.0
  */
 public interface SecurityProviderInput extends ExtensionTaskInput {
 }

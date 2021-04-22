@@ -26,6 +26,7 @@ import java.nio.ByteBuffer;
  * It can be implemented to be scoped to any subset of its parameters.
  *
  * @author Simon Baier
+ * @since 4.6.0
  */
 public interface PayloadGenerator {
 
@@ -33,6 +34,7 @@ public interface PayloadGenerator {
      * Generate the next payload for the generator. Parameters may be ignored by the implementation.
      *
      * @return payload as {@link ByteBuffer}
+     * @since 4.6.0
      */
     @NotNull ByteBuffer nextPayload(@NotNull PayloadGeneratorInput payloadGeneratorInput);
 }

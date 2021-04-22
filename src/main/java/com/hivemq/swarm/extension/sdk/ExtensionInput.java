@@ -24,6 +24,7 @@ import java.io.File;
  * This is the base interface for every extension input parameter.
  *
  * @author Yannick Weber
+ * @since 4.6.0
  */
 public interface ExtensionInput {
 
@@ -31,6 +32,7 @@ public interface ExtensionInput {
      * The location of the <code>scenario-dependencies</code> directory.
      *
      * @return The <code>scenario-dependencies</code> directory of HiveMQ Swarm.
+     * @since 4.6.0
      */
     @NotNull File getScenarioDependencies();
 }

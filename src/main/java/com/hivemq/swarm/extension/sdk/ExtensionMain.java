@@ -20,6 +20,7 @@ import org.jetbrains.annotations.NotNull;
 
 /**
  * @author Yannick Weber
+ * @since 4.6.0
  */
 public interface ExtensionMain {
 
@@ -27,6 +28,7 @@ public interface ExtensionMain {
      * This gets called when the extension is instantiated on an HiveMQ Swarm agent.
      *
      * @param extensionContext the {@link ExtensionContext}.
+     * @since 4.6.0
      */
     void extensionMain(@NotNull ExtensionContext extensionContext);
 }

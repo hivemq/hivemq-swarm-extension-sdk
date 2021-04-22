@@ -22,6 +22,7 @@ import java.util.Map;
 
 /**
  * @author Robin Atherton
+ * @since 4.6.0
  */
 public interface ExtensionTaskInput extends ExtensionInput {
 
@@ -29,6 +30,7 @@ public interface ExtensionTaskInput extends ExtensionInput {
      * Returns the client ID associated with the input.
      *
      * @return the client ID.
+     * @since 4.6.0
      */
     @NotNull String getClientId();
 
@@ -36,6 +38,7 @@ public interface ExtensionTaskInput extends ExtensionInput {
      * Returns the additional arguments of the tag in the scenario.xml.
      *
      * @return the additional arguments.
+     * @since 4.6.0
      */
     @NotNull Map<String, String> getAdditionalAttributes();
 }

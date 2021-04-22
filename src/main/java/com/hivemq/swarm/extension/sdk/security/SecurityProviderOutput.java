@@ -11,6 +11,7 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * @author Silvio Giebl
+ * @since 4.6.0
  */
 public interface SecurityProviderOutput {
 
@@ -20,6 +21,7 @@ public interface SecurityProviderOutput {
      * @param username the username.
      * @param password the password.
      * @return this.
+     * @since 4.6.0
      */
     @NotNull SecurityProviderOutput userNamePassword(@NotNull String username, byte @Nullable [] password);
 
@@ -29,6 +31,7 @@ public interface SecurityProviderOutput {
      * @param keyManagerFactory the key manager factory or <code>null</code> to remove any previously set key manager
      *                          factory.
      * @return this.
+     * @since 4.6.0
      */
     @NotNull SecurityProviderOutput keyManagerFactory(@Nullable KeyManagerFactory keyManagerFactory);
 
@@ -38,6 +41,7 @@ public interface SecurityProviderOutput {
      * @param trustManagerFactory the trust manager factory or <code>null</code> to remove any previously set trust
      *                            manager factory.
      * @return this.
+     * @since 4.6.0
      */
     @NotNull SecurityProviderOutput trustManagerFactory(@Nullable TrustManagerFactory trustManagerFactory);
 
@@ -47,6 +51,7 @@ public interface SecurityProviderOutput {
      * @param cipherSuites the cipher suites or <code>null</code> to use the default cipher suites of Netty (network
      *                     communication framework).
      * @return this.
+     * @since 4.6.0
      */
     @NotNull SecurityProviderOutput cipherSuites(@Nullable Collection<String> cipherSuites);
 
@@ -56,6 +61,7 @@ public interface SecurityProviderOutput {
      * @param protocols the protocols or <code>null</code> to use the default protocols of Netty (network communication
      *                  framework).
      * @return this.
+     * @since 4.6.0
      */
     @NotNull SecurityProviderOutput protocols(@Nullable Collection<String> protocols);
 
@@ -66,6 +72,7 @@ public interface SecurityProviderOutput {
      *
      * @param handshakeTimeout the time unit of the given timeout (this timeout only supports millisecond precision).
      * @return this.
+     * @since 4.6.0
      */
     @NotNull SecurityProviderOutput handshakeTimeout(long handshakeTimeout, @NotNull TimeUnit timeUnit);
 
@@ -74,6 +81,7 @@ public interface SecurityProviderOutput {
      *
      * @param hostnameVerifier the {@link HostnameVerifier} or <code>null</code> to use https hostname verification.
      * @return this.
+     * @since 4.6.0
      */
     @NotNull SecurityProviderOutput hostnameVerifier(@Nullable HostnameVerifier hostnameVerifier);
 }

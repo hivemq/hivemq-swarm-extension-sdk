@@ -23,6 +23,7 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * @author Yannick Weber
+ * @since 4.6.0
  */
 public interface ExtensionRegistry {
 
@@ -32,6 +33,7 @@ public interface ExtensionRegistry {
      *
      * @param key              the key.
      * @param securityProvider the {@link SecurityProvider}.
+     * @since 4.6.0
      */
     void addSecurityProvider(@NotNull String key, @NotNull SecurityProvider securityProvider);
 
@@ -41,6 +43,7 @@ public interface ExtensionRegistry {
      *
      * @param key              the key.
      * @param payloadGenerator the {@link PayloadGenerator}.
+     * @since 4.6.0
      */
     void addPayloadGenerator(@NotNull String key, @NotNull PayloadGenerator payloadGenerator);
 
@@ -50,6 +53,7 @@ public interface ExtensionRegistry {
      *
      * @param key the key.
      * @return the {@link SecurityProvider} or null.
+     * @since 4.6.0
      */
     @Nullable SecurityProvider getSecurityProvider(@NotNull String key);
 
@@ -59,6 +63,7 @@ public interface ExtensionRegistry {
      *
      * @param key the key.
      * @return the {@link PayloadGenerator} or null.
+     * @since 4.6.0
      */
     @Nullable PayloadGenerator getPayloadGenerator(@NotNull String key);
 }
