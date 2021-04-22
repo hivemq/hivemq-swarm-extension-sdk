@@ -17,8 +17,8 @@ public interface SecurityProviderOutput {
     /**
      * Configures username password authentication.
      *
-     * @param username the username
-     * @param password the password
+     * @param username the username.
+     * @param password the password.
      * @return this.
      */
     @NotNull SecurityProviderOutput userNamePassword(@NotNull String username, byte @Nullable [] password);
@@ -36,7 +36,7 @@ public interface SecurityProviderOutput {
      * Sets the optional user defined {@link TrustManagerFactory}.
      *
      * @param trustManagerFactory the trust manager factory or <code>null</code> to remove any previously set trust
-     *                            manager factory
+     *                            manager factory.
      * @return this.
      */
     @NotNull SecurityProviderOutput trustManagerFactory(@Nullable TrustManagerFactory trustManagerFactory);
@@ -72,7 +72,7 @@ public interface SecurityProviderOutput {
     /**
      * Sets the optional user defined hostname verifier.
      *
-     * @param hostnameVerifier the hostname verifier or <code>null</code> to use https hostname verification.
+     * @param hostnameVerifier the {@link HostnameVerifier} or <code>null</code> to use https hostname verification.
      * @return this.
      */
     @NotNull SecurityProviderOutput hostnameVerifier(@Nullable HostnameVerifier hostnameVerifier);
