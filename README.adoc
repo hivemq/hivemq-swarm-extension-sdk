@@ -14,8 +14,8 @@ Use our extension framework to extend HiveMQ Swarm with custom business logic or
 
 The HiveMQ Swarm extension framework can be used to add different types of functionality:
 
-* Customize the payload generation,
-* add fine-grained security,
+* Customize the payload generation
+* Add fine-grained security
 
 Resources:
 
