@@ -34,7 +34,7 @@ public interface ExtensionContext extends ExtensionInput {
     @NotNull ExtensionRegistry getExtensionRegistry();
 
     /**
-     * Use the {@link MetricRegistry} to register extension-related metrics.
+     * Use the {@link MetricRegistry} to register new or reuse extension-related metrics.
      *
      * @return the {@link MetricRegistry}.
      */

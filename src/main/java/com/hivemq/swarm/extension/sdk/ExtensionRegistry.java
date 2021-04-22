@@ -27,7 +27,8 @@ import org.jetbrains.annotations.Nullable;
 public interface ExtensionRegistry {
 
     /**
-     * Register a {@link SecurityProvider} with the specific key. It can be accessed in the scenario.xml with that key.
+     * Register a {@link SecurityProvider} with the specified key.
+     * The {@link SecurityProvider} can then be accessed by the key in the scenario.xml.
      *
      * @param key              the key.
      * @param securityProvider the {@link SecurityProvider}.
@@ -35,7 +36,8 @@ public interface ExtensionRegistry {
     void addSecurityProvider(@NotNull String key, @NotNull SecurityProvider securityProvider);
 
     /**
-     * Register a {@link PayloadGenerator} with the specific key. It can be accessed in the scenario.xml with that key.
+     * Register a {@link PayloadGenerator} with the specified key.
+     * The {@link PayloadGenerator} can then be accessed by the key in the scenario.xml.
      *
      * @param key              the key.
      * @param payloadGenerator the {@link PayloadGenerator}.
@@ -43,8 +45,8 @@ public interface ExtensionRegistry {
     void addPayloadGenerator(@NotNull String key, @NotNull PayloadGenerator payloadGenerator);
 
     /**
-     * Retrieve the {@link SecurityProvider} that is registered to that key. Returns null if no {@link SecurityProvider}
-     * was registered to that key.
+     * Retrieve the {@link SecurityProvider} that is registered to the specified key.
+     * Returns <code>null</code> if no {@link SecurityProvider} was registered to that key.
      *
      * @param key the key.
      * @return the {@link SecurityProvider} or null.
@@ -52,8 +54,8 @@ public interface ExtensionRegistry {
     @Nullable SecurityProvider getSecurityProvider(@NotNull String key);
 
     /**
-     * Retrieve the {@link PayloadGenerator} that is registered to that key. Returns null if no {@link PayloadGenerator}
-     * was registered to that key.
+     * Retrieve the {@link PayloadGenerator} that is registered to the specified key.
+     * Returns <code>null</code> if no {@link PayloadGenerator} was registered to that key.
      *
      * @param key the key.
      * @return the {@link PayloadGenerator} or null.
