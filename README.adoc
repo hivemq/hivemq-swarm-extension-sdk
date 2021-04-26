@@ -1,6 +1,7 @@
 :hivemq-github: https://github.com/hivemq
 :hivemq-website: http://www.hivemq.com
 :hivemq-swarm-docu: https://www.hivemq.com/docs/swarm/latest
+:hivemq-swarm-hello-world: https://github.com/hivemq/hivemq-swarm-hello-world-extension
 :hivemq-community-forum: https://community.hivemq.com/
 
 = HiveMQ Swarm Extension SDK
@@ -39,6 +40,8 @@ To use the SDK, add the following dependency to your Maven project:
     <version>4.6.0</version>
 </dependency>
 ----
+
+A simple example that shows the usage of the SDK can be found here:  {hivemq-swarm-hello-world}
 
 == Need help ?
 
