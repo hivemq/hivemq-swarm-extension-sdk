@@ -69,9 +69,9 @@ repositories {
 }
 
 dependencies {
+    api("io.dropwizard.metrics:metrics-core:${property("metrics-core.version")}")
+    api("org.slf4j:slf4j-api:${property("slf4j-api.version")}")
     implementation("org.jetbrains:annotations:${property("jetbrains-annotations.version")}")
-    implementation("io.dropwizard.metrics:metrics-core:${property("metrics-core.version")}")
-    implementation("org.slf4j:slf4j-api:${property("slf4j-api.version")}")
 }
 
 /* ******************** java ******************** */
