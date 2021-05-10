@@ -37,7 +37,7 @@ To use the SDK, add the following dependency to your Maven project:
 <dependency>
     <groupId>com.hivemq</groupId>
     <artifactId>hivemq-swarm-extension-sdk</artifactId>
-    <version>4.6.0</version>
+    <version>4.6.1</version>
 </dependency>
 ----
 
@@ -53,5 +53,5 @@ If you want to contribute to the HiveMQ Swarm Extension SDK, see the link:CONTRI
 
 == License
 
-The HiveMQ Extension SDK is licensed under the `APACHE LICENSE, VERSION 2.0`.
+The HiveMQ Swarm Extension SDK is licensed under the `APACHE LICENSE, VERSION 2.0`.
 A copy of the license can be found link:LICENSE[here].
