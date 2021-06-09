@@ -7,9 +7,9 @@ buildscript {
 }
 
 plugins {
-    id("java-library")
-    id("maven-publish")
-    id("signing")
+    `java-library`
+    `maven-publish`
+    signing
     id("io.github.gradle-nexus.publish-plugin")
     id("com.github.hierynomus.license")
     id("com.github.sgtsilvio.gradle.utf8")
@@ -37,34 +37,28 @@ metadata {
         apache2()
     }
     developers {
-        developer {
-            id.set("yweber")
-            name.set("Yannick Weber")
+        register("yweber") {
+            fullName.set("Yannick Weber")
             email.set("yannick.weber@hivemq.com")
         }
-        developer {
-            id.set("flimpoeck")
-            name.set("Florian Limpoeck")
+        register("flimpoeck") {
+            fullName.set("Florian Limpoeck")
             email.set("florian.limpoeck@hivemq.com")
         }
-        developer {
-            id.set("lbrandl")
-            name.set("Lukas Brandl")
+        register("lbrandl") {
+            fullName.set("Lukas Brandl")
             email.set("lukas.brandl@hivemq.com")
         }
-        developer {
-            id.set("SgtSilvio")
-            name.set("Silvio Giebl")
+        register("SgtSilvio") {
+            fullName.set("Silvio Giebl")
             email.set("silvio.giebl@hivemq.com")
         }
-        developer {
-            id.set("dkrueger")
-            name.set("Daniel Krüger")
+        register("dkrueger") {
+            fullName.set("Daniel Krüger")
             email.set("daniel.krueger@hivemq.com")
         }
-        developer {
-            id.set("tseeberger")
-            name.set("Till Seeberger")
+        register("tseeberger") {
+            fullName.set("Till Seeberger")
             email.set("till.seeberger@hivemq.com")
         }
     }
@@ -101,7 +95,7 @@ java {
 tasks.withType<Jar> {
     manifest.attributes(
         "Implementation-Title" to project.name,
-        "Implementation-Vendor" to metadata.organization!!.name.get(),
+        "Implementation-Vendor" to metadata.organization.get().name.get(),
         "Implementation-Version" to project.version
     )
 }
@@ -152,7 +146,6 @@ nexusPublishing {
         sonatype()
     }
 }
-
 
 /* ******************** checks ******************** */
 
