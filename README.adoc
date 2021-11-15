@@ -6,8 +6,8 @@
 
 = HiveMQ Swarm Extension SDK
 
-image:https://maven-badges.herokuapp.com/maven-central/com.hivemq/hivemq-swarm-extension-sdk/badge.svg["Maven Central",link="https://maven-badges.herokuapp.com/maven-central/com.hivemq/hivemq-swarm-extension-sdk"]
-image:https://javadoc.io/badge2/com.hivemq/hivemq-swarm-extension-sdk/javadoc.svg["javadoc", link=https://javadoc.io/doc/com.hivemq/hivemq-swarm-extension-sdk]
+image:https://maven-badges.herokuapp.com/maven-central/com.hivemq/hivemq-swarm-extension-sdk/badge.svg?style=for-the-badge["Maven Central",link="https://maven-badges.herokuapp.com/maven-central/com.hivemq/hivemq-swarm-extension-sdk"]
+image:https://javadoc.io/badge2/com.hivemq/hivemq-swarm-extension-sdk/javadoc.svg?style=for-the-badge["javadoc",link=https://javadoc.io/doc/com.hivemq/hivemq-swarm-extension-sdk]
 
 HiveMQ offers this free, open source extension SDK for HiveMQ Swarm.
 The HiveMQ Swarm extension framework provides an open API that allows developers to create custom extensions that suit their specific infrastructures.
@@ -26,7 +26,6 @@ Resources:
 * Contribution Guidelines: link:CONTRIBUTING.md[Contributing]
 * License: The source files in this repository are made available under the link:LICENSE[Apache License Version 2.0].
 
-
 == Using the SDK
 
 The HiveMQ Swarm Extension SDK is available in Maven central, so no special configuration is needed.
@@ -43,7 +42,7 @@ To use the SDK, add the following dependency to your Maven project:
 
 A simple example that shows the usage of the SDK can be found here:  {hivemq-swarm-hello-world}
 
-== Need help ?
+== Need Help?
 
 If you need help with custom HiveMQ Swarm extensions, please contact support@hivemq.com.
 
