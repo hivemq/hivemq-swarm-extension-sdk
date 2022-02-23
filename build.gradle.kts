@@ -21,8 +21,6 @@ plugins.withId("com.hivemq.version-updater") {
     project.ext.set("versionUpdaterFiles", arrayOf("README.adoc"))
 }
 
-/* ******************** metadata ******************** */
-
 group = "com.hivemq"
 description = "SDK for developing HiveMQ Swarm extensions."
 
@@ -68,8 +66,6 @@ metadata {
     }
 }
 
-/* ******************** dependencies ******************** */
-
 repositories {
     mavenCentral()
 }
@@ -86,7 +82,6 @@ java {
     toolchain {
         languageVersion.set(JavaLanguageVersion.of(11))
     }
-
     withJavadocJar()
     withSourcesJar()
 }
