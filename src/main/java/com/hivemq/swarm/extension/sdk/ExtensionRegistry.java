@@ -17,9 +17,12 @@
 package com.hivemq.swarm.extension.sdk;
 
 import com.hivemq.swarm.extension.sdk.generators.PayloadGenerator;
+import com.hivemq.swarm.extension.sdk.metrics.MetricsConsumer;
 import com.hivemq.swarm.extension.sdk.security.SecurityProvider;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+
+import java.util.List;
 
 /**
  * @author Yannick Weber
@@ -66,4 +69,8 @@ public interface ExtensionRegistry {
      * @since 4.6.0
      */
     @Nullable PayloadGenerator getPayloadGenerator(@NotNull String key);
+
+    void addMetricsConsumer(@NotNull MetricsConsumer metricsConsumer);
+
+    List<MetricsConsumer> getMetricsConsumers();
 }
