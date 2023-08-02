@@ -60,8 +60,6 @@ metadata {
         }
     }
     github {
-        org.set("hivemq")
-        repo.set("hivemq-swarm-extension-sdk")
         issues()
     }
 }
