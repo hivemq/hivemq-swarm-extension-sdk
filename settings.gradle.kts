@@ -1,5 +1,3 @@
-rootProject.name = "hivemq-swarm-extension-sdk"
-
 pluginManagement {
     plugins {
         id("io.github.gradle-nexus.publish-plugin") version "${extra["plugin.nexus-publish.version"]}"
@@ -13,3 +11,5 @@ pluginManagement {
         includeBuild("../hivemq/plugins")
     }
 }
+
+rootProject.name = "hivemq-swarm-extension-sdk"
