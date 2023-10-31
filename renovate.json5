@@ -9,5 +9,5 @@
     "renovate-playground"
   ],
   "useBaseBranchConfig": "merge",
-  "branchPrefix": "renovate/hsw_"
+  "branchPrefix": "renovate/hivemq-swarm-extension-sdk/"
 }
