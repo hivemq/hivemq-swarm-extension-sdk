@@ -18,45 +18,45 @@ plugins {
 }
 
 plugins.withId("com.hivemq.version-updater") {
-    project.ext.set("versionUpdaterFiles", arrayOf("README.adoc"))
+    project.ext["versionUpdaterFiles"] = arrayOf("README.adoc")
 }
 
 group = "com.hivemq"
 description = "SDK for developing HiveMQ Swarm extensions."
 
 metadata {
-    readableName.set("HiveMQ Swarm Extension SDK")
+    readableName = "HiveMQ Swarm Extension SDK"
     organization {
-        name.set("HiveMQ GmbH")
-        url.set("https://www.hivemq.com/")
+        name = "HiveMQ GmbH"
+        url = "https://www.hivemq.com/"
     }
     license {
         apache2()
     }
     developers {
         register("yweber") {
-            fullName.set("Yannick Weber")
-            email.set("yannick.weber@hivemq.com")
+            fullName = "Yannick Weber"
+            email = "yannick.weber@hivemq.com"
         }
         register("flimpoeck") {
-            fullName.set("Florian Limpoeck")
-            email.set("florian.limpoeck@hivemq.com")
+            fullName = "Florian Limpoeck"
+            email = "florian.limpoeck@hivemq.com"
         }
         register("lbrandl") {
-            fullName.set("Lukas Brandl")
-            email.set("lukas.brandl@hivemq.com")
+            fullName = "Lukas Brandl"
+            email = "lukas.brandl@hivemq.com"
         }
         register("SgtSilvio") {
-            fullName.set("Silvio Giebl")
-            email.set("silvio.giebl@hivemq.com")
+            fullName = "Silvio Giebl"
+            email = "silvio.giebl@hivemq.com"
         }
         register("dkrueger") {
-            fullName.set("Daniel Krüger")
-            email.set("daniel.krueger@hivemq.com")
+            fullName = "Daniel Krüger"
+            email = "daniel.krueger@hivemq.com"
         }
         register("tseeberger") {
-            fullName.set("Till Seeberger")
-            email.set("till.seeberger@hivemq.com")
+            fullName = "Till Seeberger"
+            email = "till.seeberger@hivemq.com"
         }
     }
     github {
@@ -78,7 +78,7 @@ dependencies {
 
 java {
     toolchain {
-        languageVersion.set(JavaLanguageVersion.of(11))
+        languageVersion = JavaLanguageVersion.of(11)
     }
     withJavadocJar()
     withSourcesJar()
