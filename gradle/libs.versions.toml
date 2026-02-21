@@ -1,6 +1,6 @@
 [versions]
 dropwizard-metrics = "4.2.38"
-jetbrains-annotations = "26.0.2-1"
+jetbrains-annotations = "26.1.0"
 slf4j = "2.0.17"
 
 [libraries]
